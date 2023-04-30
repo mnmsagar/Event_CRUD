@@ -33,14 +33,13 @@ exports.deletebyID=(req,res)=>{
 }
 
 exports.getAll=(req,res)=>{
-    res.send(data);
+    res.status(202).send(data);
 }
 
 
 exports.updatebyId=(req,res)=>{
     let id=req.params.id;
     let body=req.body;
-    console.log(typeof body,body);
     const idx = data.findIndex((ele)=>{
         return ele.uid == id;
     })
